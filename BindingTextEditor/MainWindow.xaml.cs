@@ -27,6 +27,8 @@ namespace BindingTextEditor
             InitializeComponent();
             var colors = new List<string> { "Red", "Black", "Yellow" };
             Select_Color.ItemsSource = colors;
+            var fontSize = new List<int> { 8, 9, 10, 11 };
+            Font_Size.ItemsSource = fontSize;
         }
         private void Open_Click(object sender, RoutedEventArgs e)
         {
