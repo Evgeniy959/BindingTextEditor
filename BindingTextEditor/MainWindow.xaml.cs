@@ -31,8 +31,10 @@ namespace BindingTextEditor
             Font_Size.ItemsSource = fontSize;
             var colorBox = new List<string> { "White", "Red", "Black", "Yellow", "Green" };
             ColorBox.ItemsSource = colorBox;
-            //ColorBox.Foreground = colorBox;
-            
+            //ColorBox.Items() ;
+            var _content = ColorBox.ItemsSource;
+            var content = (_content as ComboBoxItem).Foreground;
+            //var c = content as 
         }
         private void Open_Click(object sender, RoutedEventArgs e)
         {
