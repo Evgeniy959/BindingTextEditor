@@ -27,7 +27,7 @@
             <Setter Property="Background" Value="{Binding ElementName=ColorBox, Path=SelectedValue.Foreground}"/>-->
             <Setter Property="FontSize" Value="{Binding ElementName=Font_Size, Path=SelectedItem}"/>
             <Setter Property="Foreground" Value="{Binding ElementName=Select_Color, Path=SelectedItem}"/>
-            <Setter Property="Background" Value="{Binding ElementName=ColorBox, Path=SelectedValue.Foreground}"/>
+            <Setter Property="Background" Value="{Binding ElementName=ColorBox, Path=SelectedItem}"/>
         </Style>
     </Window.Resources>
     <Grid>
@@ -69,21 +69,23 @@
             <!--<ComboBox x:Name="Color" SelectedIndex="1" ToolTip="Цвет текста">-->
             <ComboBox x:Name="Select_Color" SelectedIndex="1" ToolTip="Цвет текста">
                 <!--<ComboBoxItem Content="White" Foreground="White"/>
-                <ComboBoxItem Content="Black" Foreground="Black"/>
                 <ComboBoxItem Content="Red" Foreground="Red"/>
+                <ComboBoxItem Content="Black" Foreground="Black"/>
+                <ComboBoxItem Content="Yellow" Foreground="Yellow"/>
                 <ComboBoxItem Content="Green" Foreground="Green"/>
                 <ComboBoxItem Content="Blue" Foreground="Blue"/>
-                <ComboBoxItem Content="Yellow" Foreground="Yellow"/>
                 <ComboBoxItem Content="Orange" Foreground="Orange"/>-->
             </ComboBox>
-            <ComboBox x:Name="ColorBox" SelectedIndex="0" ToolTip="Цвет фона">
-                <ComboBoxItem Content="White" Foreground="White"/>
-                <ComboBoxItem Content="Black" Foreground="Black"/>
+            <!--<ComboBox x:Name="ColorBox" SelectedIndex="0" Foreground="Red" ToolTip="Цвет фона">-->
+            <ComboBox x:Name="ColorBox" SelectedIndex="0" ToolTip="Цвет фона"
+                Foreground="{Binding ElementName=ColorBox, Path=SelectedItem}">
+                <!--<ComboBoxItem Foreground="White"/>
                 <ComboBoxItem Content="Red" Foreground="Red"/>
+                <ComboBoxItem Content="Black" Foreground="Black"/>
+                <ComboBoxItem Content="Yellow" Foreground="Yellow"/>
                 <ComboBoxItem Content="Green" Foreground="Green"/>
                 <ComboBoxItem Content="Blue" Foreground="Blue"/>
-                <ComboBoxItem Content="Yellow" Foreground="Yellow"/>
-                <ComboBoxItem Content="Orange" Foreground="Orange"/>
+                <ComboBoxItem Content="Orange" Foreground="Orange"/>-->
             </ComboBox>
         </ToolBar>
         <TextBox x:Name="TextB" Grid.Row="1"  VerticalScrollBarVisibility="Visible" AcceptsReturn="True" SpellCheck.IsEnabled="True" Language="ru-Ru"/>

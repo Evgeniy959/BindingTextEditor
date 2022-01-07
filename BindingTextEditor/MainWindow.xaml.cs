@@ -27,8 +27,12 @@ namespace BindingTextEditor
             InitializeComponent();
             var colors = new List<string> { "Red", "Black", "Yellow" };
             Select_Color.ItemsSource = colors;
-            var fontSize = new List<int> { 8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26 };
+            var fontSize = new List<double> { 8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26 };
             Font_Size.ItemsSource = fontSize;
+            var colorBox = new List<string> { "White", "Red", "Black", "Yellow", "Green" };
+            ColorBox.ItemsSource = colorBox;
+            //ColorBox.Foreground = colorBox;
+            
         }
         private void Open_Click(object sender, RoutedEventArgs e)
         {
