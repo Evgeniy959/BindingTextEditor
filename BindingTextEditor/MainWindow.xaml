@@ -88,6 +88,6 @@
                 <ComboBoxItem Content="Orange" Foreground="Orange"/>-->
             </ComboBox>
         </ToolBar>
-        <TextBox x:Name="TextB" Grid.Row="1"  VerticalScrollBarVisibility="Visible" AcceptsReturn="True" SpellCheck.IsEnabled="True" Language="ru-Ru"/>
+        <TextBox x:Name="TextFile" Grid.Row="1"  VerticalScrollBarVisibility="Visible" AcceptsReturn="True" SpellCheck.IsEnabled="True" Language="ru-Ru"/>
     </Grid>
 </Window>

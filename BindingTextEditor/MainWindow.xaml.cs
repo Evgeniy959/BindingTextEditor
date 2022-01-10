@@ -32,19 +32,20 @@ namespace BindingTextEditor
             var colorBox = new List<string> { "White", "Red", "Black", "Yellow", "Green" };
             ColorBox.ItemsSource = colorBox;
             //ColorBox.Items() ;
-            var _content = ColorBox.ItemsSource;
-            var content = (_content as ComboBoxItem).Foreground;
-            //var c = content as 
+            //var content = ColorBox.ItemsSource;
+            //var content1 = (content as ComboBoxItem).Foreground = (colorBox as ComboBoxItem).;
+            //var content = (ColorBox.ItemsSource as ComboBoxItem).Foreground;
+            //(content as ComboBoxItem); 
         }
         private void Open_Click(object sender, RoutedEventArgs e)
         {
-            TextB.Text = FileDialogues.OpenFile(out string strPath);
+            TextFile.Text = FileDialogues.OpenFile(out string strPath);
             path = strPath;
         }
 
         private void SaveAs_Click(object sender, RoutedEventArgs e)
         {
-            FileDialogues.SaveAsFile(TextB.Text, out string strPath);
+            FileDialogues.SaveAsFile(TextFile.Text, out string strPath);
             path = strPath;
         }
 
@@ -52,11 +53,11 @@ namespace BindingTextEditor
         {
             if (path == null)
             {
-                FileDialogues.SaveAsFile(TextB.Text, out string strPath);
+                FileDialogues.SaveAsFile(TextFile.Text, out string strPath);
                 path = strPath;
                 return;
             }
-            File.WriteAllText(path, TextB.Text);
+            File.WriteAllText(path, TextFile.Text);
         }
         private void Exit_Click(object sender, RoutedEventArgs e)
         {

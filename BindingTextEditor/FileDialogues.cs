@@ -26,10 +26,14 @@ namespace BindingTextEditor
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Text Files (*.txt)|*.txt";
+            /*saveFileDialog.CreatePrompt = true;
+            saveFileDialog.OverwritePrompt = true;*/
             if (saveFileDialog.ShowDialog() == true)
             {
-                File.WriteAllText(saveFileDialog.FileName, str);
                 strPath = saveFileDialog.FileName;
+                File.WriteAllText(strPath, str);
+                //File.WriteAllText(saveFileDialog.FileName, str);
+                //strPath = saveFileDialog.FileName;
             }
             strPath = null;
         }
