@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,47 @@ namespace BindingTextEditor
     /// </summary>
     public partial class MainWindow : Window
     {
+        string path = null;
         public MainWindow()
         {
             InitializeComponent();
+            var colors = new List<string> { "Red", "Black", "Yellow" };
+            Select_Color.ItemsSource = colors;
+            var fontSize = new List<double> { 8, 9, 10, 11, 12, 14, 16, 18, 20, 22, 24, 26 };
+            Font_Size.ItemsSource = fontSize;
+            var colorBox = new List<string> { "White", "Red", "Black", "Yellow", "Green" };
+            ColorBox.ItemsSource = colorBox;
+            //ColorBox.Items() ;
+            //var content = ColorBox.ItemsSource;
+            //var content1 = (content as ComboBoxItem).Foreground = (colorBox as ComboBoxItem).;
+            //var content = (ColorBox.ItemsSource as ComboBoxItem).Foreground;
+            //(content as ComboBoxItem); 
+        }
+        private void Open_Click(object sender, RoutedEventArgs e)
+        {
+            TextFile.Text = FileDialogues.OpenFile(out string strPath);
+            path = strPath;
+        }
+
+        private void SaveAs_Click(object sender, RoutedEventArgs e)
+        {
+            FileDialogues.SaveAsFile(TextFile.Text, out string strPath);
+            path = strPath;
+        }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            if (path == null)
+            {
+                FileDialogues.SaveAsFile(TextFile.Text, out string strPath);
+                path = strPath;
+                return;
+            }
+            File.WriteAllText(path, TextFile.Text);
+        }
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }
