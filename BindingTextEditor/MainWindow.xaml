@@ -22,9 +22,6 @@
                     <Setter Property="TextDecorations" Value="Underline"/>
                 </DataTrigger>
             </Style.Triggers>
-            <!--<Setter Property="FontSize" Value="{Binding ElementName=Font_Size, Path=SelectedValue.Content}"/>
-            <Setter Property="Foreground" Value="{Binding ElementName=Color, Path=SelectedValue.Foreground}"/>
-            <Setter Property="Background" Value="{Binding ElementName=ColorBox, Path=SelectedValue.Foreground}"/>-->
             <Setter Property="FontSize" Value="{Binding ElementName=Font_Size, Path=SelectedItem}"/>
             <Setter Property="Foreground" Value="{Binding ElementName=Select_Color, Path=SelectedItem}"/>
             <Setter Property="Background" Value="{Binding ElementName=ColorBox, Path=SelectedItem}"/>
@@ -55,18 +52,7 @@
             </CheckBox>
             <Separator></Separator>
             <ComboBox x:Name="Font_Size" SelectedIndex="4" ToolTip="Размер шрифта">
-                <!--<ComboBoxItem Content="8"/>
-                <ComboBoxItem Content="9"/>
-                <ComboBoxItem Content="10"/>
-                <ComboBoxItem Content="11"/>
-                <ComboBoxItem Content="12"/>
-                <ComboBoxItem Content="14"/>
-                <ComboBoxItem Content="16"/>
-                <ComboBoxItem Content="18"/>
-                <ComboBoxItem Content="20"/>
-                <ComboBoxItem Content="22"/>-->
             </ComboBox>
-            <!--<ComboBox x:Name="Color" SelectedIndex="1" ToolTip="Цвет текста">-->
             <ComboBox x:Name="Select_Color" SelectedIndex="1" ToolTip="Цвет текста">
                 <!--<ComboBoxItem Content="White" Foreground="White"/>
                 <ComboBoxItem Content="Red" Foreground="Red"/>

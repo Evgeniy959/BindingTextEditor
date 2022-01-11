@@ -26,8 +26,8 @@ namespace BindingTextEditor
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Text Files (*.txt)|*.txt";
-            /*saveFileDialog.CreatePrompt = true;
-            saveFileDialog.OverwritePrompt = true;*/
+            saveFileDialog.CreatePrompt = true;
+            saveFileDialog.OverwritePrompt = true;
             if (saveFileDialog.ShowDialog() == true)
             {
                 strPath = saveFileDialog.FileName;
