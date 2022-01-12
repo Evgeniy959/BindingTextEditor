@@ -54,24 +54,8 @@
             <ComboBox x:Name="Font_Size" SelectedIndex="4" ToolTip="Размер шрифта">
             </ComboBox>
             <ComboBox x:Name="Select_Color" SelectedIndex="1" ToolTip="Цвет текста">
-                <!--<ComboBoxItem Content="White" Foreground="White"/>
-                <ComboBoxItem Content="Red" Foreground="Red"/>
-                <ComboBoxItem Content="Black" Foreground="Black"/>
-                <ComboBoxItem Content="Yellow" Foreground="Yellow"/>
-                <ComboBoxItem Content="Green" Foreground="Green"/>
-                <ComboBoxItem Content="Blue" Foreground="Blue"/>
-                <ComboBoxItem Content="Orange" Foreground="Orange"/>-->
             </ComboBox>
-            <!--<ComboBox x:Name="ColorBox" SelectedIndex="0" Foreground="Red" ToolTip="Цвет фона">-->
-            <ComboBox x:Name="ColorBox" SelectedIndex="0" ToolTip="Цвет фона"
-                Foreground="{Binding ElementName=ColorBox, Path=SelectedItem}">
-                <!--<ComboBoxItem Foreground="White"/>
-                <ComboBoxItem Content="Red" Foreground="Red"/>
-                <ComboBoxItem Content="Black" Foreground="Black"/>
-                <ComboBoxItem Content="Yellow" Foreground="Yellow"/>
-                <ComboBoxItem Content="Green" Foreground="Green"/>
-                <ComboBoxItem Content="Blue" Foreground="Blue"/>
-                <ComboBoxItem Content="Orange" Foreground="Orange"/>-->
+            <ComboBox x:Name="ColorBox" SelectedIndex="0" ToolTip="Цвет фона">
             </ComboBox>
         </ToolBar>
         <TextBox x:Name="TextFile" Grid.Row="1"  VerticalScrollBarVisibility="Visible" AcceptsReturn="True" SpellCheck.IsEnabled="True" Language="ru-Ru"/>
