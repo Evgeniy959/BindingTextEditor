@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BindingTextEditor
+/*namespace BindingTextEditor
 {
     public static class FileDialogues
     {
@@ -21,7 +21,7 @@ namespace BindingTextEditor
                 return File.ReadAllText(pathFile); 
             }
             pathFile = null;
-            return String.Empty;*/
+            return String.Empty;
             var openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Text Files (*.txt)|*.txt";
 
@@ -44,3 +44,4 @@ namespace BindingTextEditor
         }
     }
 }
+*/

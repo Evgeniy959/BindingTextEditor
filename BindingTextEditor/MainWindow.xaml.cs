@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace BindingTextEditor
     /// </summary>
     public partial class MainWindow : Window
     {
-        string path = null;
+        //string path = null;
         public MainWindow()
         {
             InitializeComponent();
@@ -34,11 +35,12 @@ namespace BindingTextEditor
         }
         private void Open_Click(object sender, RoutedEventArgs e)
         {
-            TextFile.Text = FileDialogues.OpenFile(out string pathFile);
-            path = pathFile;
+            var pathFile = OpenFile();
+            TextFile.Text = File.ReadAllText(pathFile);
+            //path = pathFile;
         }
 
-        private void SaveAs_Click(object sender, RoutedEventArgs e)
+        /*private void SaveAs_Click(object sender, RoutedEventArgs e)
         {
             FileDialogues.SaveAsFile(TextFile.Text, out string pathFile);
             //path = pathFile;
@@ -51,12 +53,28 @@ namespace BindingTextEditor
                 FileDialogues.SaveAsFile(TextFile.Text, out string pathFile);
                 path = pathFile;
                 return;
-            }*/
+            }
             File.WriteAllText(path, TextFile.Text);
-        }
+        }*/
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+        public static string OpenFile()
+        {
+            /*OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Text Files (*.txt)|*.txt";
+            if (openFileDialog.ShowDialog() == true)
+            {
+                pathFile = openFileDialog.FileName;
+                return File.ReadAllText(pathFile); 
+            }
+            pathFile = null;
+            return String.Empty;*/
+            var openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Text Files (*.txt)|*.txt";
+
+            return openFileDialog.ShowDialog() == true ? openFileDialog.FileName : string.Empty;
         }
     }
 }
