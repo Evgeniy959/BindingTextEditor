@@ -46,12 +46,12 @@ namespace BindingTextEditor
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            /*if (path == null)
+            if (path == null)
             {
                 FileDialogues.SaveAsFile(TextFile.Text, out string pathFile);
                 path = pathFile;
                 return;
-            }*/
+            }
             File.WriteAllText(path, TextFile.Text);
         }
         private void Exit_Click(object sender, RoutedEventArgs e)
