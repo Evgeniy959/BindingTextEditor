@@ -41,7 +41,7 @@ namespace BindingTextEditor
         private void SaveAs_Click(object sender, RoutedEventArgs e)
         {
             FileDialogues.SaveAsFile(TextFile.Text, out string pathFile);
-            path = pathFile;
+            //path = pathFile;
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)

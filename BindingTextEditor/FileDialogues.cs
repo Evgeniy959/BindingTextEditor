@@ -10,9 +10,10 @@ namespace BindingTextEditor
 {
     public static class FileDialogues
     {
-        public static string OpenFile(out string pathFile)
+        //public static string OpenFile(out string pathFile)
+        public static string OpenFile()
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
+            /*OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Text Files (*.txt)|*.txt";
             if (openFileDialog.ShowDialog() == true)
             {
@@ -20,7 +21,11 @@ namespace BindingTextEditor
                 return File.ReadAllText(pathFile); 
             }
             pathFile = null;
-            return String.Empty;
+            return String.Empty;*/
+            var openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Text Files (*.txt)|*.txt";
+
+            return openFileDialog.ShowDialog() == true ? openFileDialog.FileName : string.Empty;
         }
         public static void SaveAsFile(string str, out string pathFile)
         {
