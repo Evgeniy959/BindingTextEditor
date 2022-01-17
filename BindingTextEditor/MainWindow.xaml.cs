@@ -22,7 +22,7 @@ namespace BindingTextEditor
     /// </summary>
     public partial class MainWindow : Window
     {
-        //string path = null;
+        string path = null;
         public MainWindow()
         {
             InitializeComponent();
@@ -37,44 +37,47 @@ namespace BindingTextEditor
         {
             var pathFile = OpenFile();
             TextFile.Text = File.ReadAllText(pathFile);
-            //path = pathFile;
+            path = pathFile;
         }
 
-        /*private void SaveAs_Click(object sender, RoutedEventArgs e)
+        private void SaveAs_Click(object sender, RoutedEventArgs e)
         {
-            FileDialogues.SaveAsFile(TextFile.Text, out string pathFile);
-            //path = pathFile;
+            var pathFile = SaveAsFile();
+            File.WriteAllText(pathFile, TextFile.Text);
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            /*if (path == null)
+            if (path == null)
             {
-                FileDialogues.SaveAsFile(TextFile.Text, out string pathFile);
-                path = pathFile;
+                var pathFile = SaveAsFile();
+                File.WriteAllText(pathFile, TextFile.Text);
                 return;
             }
             File.WriteAllText(path, TextFile.Text);
-        }*/
+        }
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
-        public static string OpenFile()
+        private string OpenFile()
         {
-            /*OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Text Files (*.txt)|*.txt";
-            if (openFileDialog.ShowDialog() == true)
-            {
-                pathFile = openFileDialog.FileName;
-                return File.ReadAllText(pathFile); 
-            }
-            pathFile = null;
-            return String.Empty;*/
             var openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Text Files (*.txt)|*.txt";
-
             return openFileDialog.ShowDialog() == true ? openFileDialog.FileName : string.Empty;
+        }
+        private string SaveAsFile()
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Text Files (*.txt)|*.txt";
+            saveFileDialog.CreatePrompt = true;
+            saveFileDialog.OverwritePrompt = true;
+            /*if (saveFileDialog.ShowDialog() == true) 
+            {
+                return saveFileDialog.FileName;
+            }
+            return string.Empty;*/
+            return saveFileDialog.ShowDialog() == true ? saveFileDialog.FileName : string.Empty;
         }
     }
 }
