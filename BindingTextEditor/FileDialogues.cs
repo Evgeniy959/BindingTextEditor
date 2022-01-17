@@ -10,19 +10,19 @@ namespace BindingTextEditor
 {
     public static class FileDialogues
     {
-        public static string OpenFile(out string strPath)
+        public static string OpenFile(out string pathFile)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Text Files (*.txt)|*.txt";
             if (openFileDialog.ShowDialog() == true)
             {
-                strPath = openFileDialog.FileName;
-                return File.ReadAllText(strPath);
+                pathFile = openFileDialog.FileName;
+                return File.ReadAllText(pathFile); 
             }
-            strPath = null;
+            pathFile = null;
             return String.Empty;
         }
-        public static void SaveAsFile(string str, out string strPath)
+        public static void SaveAsFile(string str, out string pathFile)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Text Files (*.txt)|*.txt";
@@ -30,12 +30,12 @@ namespace BindingTextEditor
             saveFileDialog.OverwritePrompt = true;
             if (saveFileDialog.ShowDialog() == true)
             {
-                strPath = saveFileDialog.FileName;
-                File.WriteAllText(strPath, str);
+                pathFile = saveFileDialog.FileName;
+                File.WriteAllText(pathFile, str);
                 //File.WriteAllText(saveFileDialog.FileName, str);
-                //strPath = saveFileDialog.FileName;
+                //pathFile = saveFileDialog.FileName;
             }
-            strPath = null;
+            pathFile = null;
         }
     }
 }
